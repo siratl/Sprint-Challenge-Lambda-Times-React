@@ -44,14 +44,24 @@ const HeaderTemp = styled.div`
   flex: 1;
 `;
 
-const Header = () => {
-  return (
-    <HeaderDiv>
-      <HeaderdDate>MARCH 32, 2018</HeaderdDate>
-      <HeaderH1>Lambda Times</HeaderH1>
-      <HeaderTemp>98°</HeaderTemp>
-    </HeaderDiv>
-  );
-};
+class Header extends React.Component {
+  state = { date: '' };
+  componentDidMount = () => {
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+    this.setState({ date: `${month}/${date}/${year}` });
+  };
+
+  render() {
+    return (
+      <HeaderDiv>
+        <HeaderdDate>{this.state.date}</HeaderdDate>
+        <HeaderH1>Lambda Times</HeaderH1>
+        <HeaderTemp>78°</HeaderTemp>
+      </HeaderDiv>
+    );
+  }
+}
 
 export default Header;

@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 const TabDivContainer = styled.div`
-display: flex;
+  display: flex;
   justify-content: none;
   align-items: center;
   flex-direction: row;
@@ -18,20 +17,9 @@ display: flex;
   font-weight: bold;
 
   &:hover {
-  text-decoration: underline;
-}
-`
-
-const tab = styled.div`
-
-
-`
-
-const activeTab = styled.div`
-background-color: #fff;
-  color: #333;
-  border: 2px solid #333;
-`
+    text-decoration: underline;
+  }
+`;
 
 const Tab = props => {
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
@@ -55,7 +43,7 @@ const Tab = props => {
 Tab.propTypes = {
   tab: PropTypes.string,
   selectTabHandler: PropTypes.func,
-  selectedTab: PropTypes.string
-}
+  selectedTab: PropTypes.string,
+};
 
 export default Tab;
